@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\SourceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('sources', 'SourceController', ['only' => ['index', 'show']]);
-Route::resource('sources.articles', 'ArticleController', ['only' => ['index', 'show']]);
+Route::resource('sources', SourceController::class, ['only' => ['index', 'show']]);
+Route::resource('articles', ArticleController::class, ['only' => ['index', 'show']]);
 
 require __DIR__.'/auth.php';
