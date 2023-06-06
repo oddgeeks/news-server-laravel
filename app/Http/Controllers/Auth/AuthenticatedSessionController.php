@@ -18,15 +18,9 @@ class AuthenticatedSessionController extends Controller
     {
         try {
             $request->authenticate();
-            // return response('hello');
             $token = Auth::user()->createToken($request->token_name);
             return response(Auth::user());
-
-            // $request->session()->regenerate();
-
-            return response(Auth::user());
         } catch (Exception $e) {
-            // Log::error('register error', ['error' => $e]);
             var_dump(['status' => 'buggy', 'message' => $e->getMessage(), 'line' => $e->getLine()]);
             return response(['status' => false, 'message' => 'Something went wrong', 'error' => $e], 500);
         }

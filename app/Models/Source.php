@@ -9,6 +9,6 @@ class Source extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'id', 'category', 'description', 'url', 'language', 'country' ];
+    protected $fillable = [ 'id', 'slug', 'name', 'category', 'description', 'url', 'language', 'country' ];
     protected $casts = ['id' => 'string'];
 }

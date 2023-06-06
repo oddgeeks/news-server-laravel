@@ -14,4 +14,13 @@ class Authenticate extends Middleware
     {
         return $request->expectsJson() ? null : route('login');
     }
+
+    protected function authenticate($request, array $guards)
+    {
+        $token = $request->bearerToken();
+
+        if (!$token) {
+            throw new UnauthorizedHttpException('Bearer');
+        }
+    }
 }
