@@ -18,3 +18,8 @@ This app is using Laravel v.10.x and PHP v.8.2.x, and MySQL as a database
 
 You can access and get a new API-KEY on https://newsapi.org/ \
 There you can find your own API-KEY and the way how to use NEWSAPI \
+
+## How to start
+```
+docker-compose up
+```
